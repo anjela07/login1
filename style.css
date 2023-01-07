@@ -1,0 +1,75 @@
+body{
+    background:linear-gradient(to right, rgb(133, 106, 230), rgb(106, 67, 245))
+    
+    
+}
+#email{
+    color: rgb(100, 57, 0);
+    font-size: 20px;
+
+    border-radius: 20px;
+    background-color:rgb(74, 62, 235);
+    margin-top: 90px;
+}
+#email:hover{
+    box-shadow: 0px 0px 20px 10px rgb(98, 88, 236);
+    transition: 1s;
+    transform: scaleX(1.1);
+}
+#password{
+    border-radius: 20px;
+    color: rgb(100, 45, 0);
+    font-size: 20px;
+    background-color:rgb(74, 62, 235);
+ 
+}
+#password:hover{
+    box-shadow: 0px 0px 20px 10px rgb(98, 88, 236);
+    transition: 1s;
+    transform: scaleX(1.1);
+}
+#click{
+  
+    border-radius: 20px;
+    background-color: rgb(74, 62, 235);
+    color: rgb(255, 145, 0);
+}
+#click:hover{
+    transform: scaleX(1.1);
+    transition: 1s;
+    box-shadow: -1px 3px 5px 2px rgb(113, 122, 252);
+}
+#a{
+    background-color: white;
+    border-radius: 10px;
+    color:olivedrab;
+    font-size: 27px;
+    
+    margin-top: 120px;
+}
+@media(max-width: 1800px){
+    body{
+      
+        background-size: 100%;
+    }
+    .email{
+        display: flex;
+        margin-left: 20px;
+    }
+    .password{
+        margin-left: 20px;
+    }
+}
+@media(max-width:300px){
+    body{
+       
+        background-size: 100%;
+    }
+    .email{
+        display: flex;
+        margin-left: 10px;
+    }
+    .password{
+        margin-right: 10px;
+    }
+}

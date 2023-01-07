@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>textarea</title>
+</head>
+<body>
+    <script>
+        //  let textarea = document.createElement("textarea");
+      //  let p = document.createElement('p')
+
+      //  textarea.oninput = (e) => {
+      //     console.log(e.target.value)
+      //     localStorage.setItem('text', e.target.value)
+      //  }
+      //  p.innerHTML = 'salam'
+
+      //  document.body.append(textarea)
+      //  document.body.append(p)
+
+
+
+
+
+
+
+
+
+
+
+      
+      const chechUser = () => {
+        let emailValue = document.getElementById("email").value;
+        let passwordValue = document.getElementById("password").value;
+        if (emailValue === "angelaa" && passwordValue === "1210") {
+          alert("You are welcome ");
+
+          let user = {
+            email: emailValue,
+            password: passwordValue,
+          };
+
+          localStorage.setItem("userValue", JSON.stringify(user));
+          initLogin();
+        } else {
+          alert("oops try again :( ");
+        }
+      };
+
+      const renderLogin = () => {
+        let email = document.createElement("input");
+        // email.style.marginTop='300px'
+        // email.style.marginLeft='160px'
+        // email.style.borderRadius='20px'
+        email.placeholder = "email";
+        email.type="password"
+        email.id="email"
+        let password = document.createElement("input");
+        // password.style.marginLeft='200px'
+        // password.style.borderRadius='20px'
+        password.type="password"
+        password.placeholder= "password"
+        password.id="password"
+
+        let emailLabel = document.createElement("label");
+        emailLabel.id="first"
+        // emailLabel.style.marginLeft='95px'
+        // emailLabel.style.position='absolute'
+        // emailLabel.style.marginTop='-20px'
+        // emailLabel.style.fontSize='20px'
+        let passwordLabel = document.createElement("label");
+        passwordLabel.style.fontSize='20px'
+        passwordLabel.style.position='absolute'
+        passwordLabel.style.marginTop='-20px'
+        passwordLabel.style.marginLeft='2px'
+
+        let p = document.createElement("p");
+        let userValue = localStorage.getItem("userValue");
+        p.innerHTML = userValue;
+        console.log(userValue);
+
+        // emailLabel.innerHTML = "Enter email  :";
+
+        // passwordLabel.innerHTML = "Enter password   :";
+
+        let button = document.createElement("button");
+        button.id="click"
+        button.innerHTML = "click me";
+        button.addEventListener("click", chechUser);
+
+        document.body.append(email);
+        document.body.append(document.createElement("br"));
+        document.body.append(emailLabel);
+        document.body.append(document.createElement("br"));
+        document.body.append(password);
+        document.body.append(document.createElement("br"));
+        document.body.append(passwordLabel);
+        document.body.append(document.createElement("br"));
+        document.body.append(button);
+        document.body.append(p);
+      };
+
+      const ini = () => {
+        let a = document.createElement('a');
+      
+        a.href = "https://youtu.be/OiVVKITz7oA";
+        a.innerHTML='Kyrgyzstan';
+        a.id="a"
+        let s =document.body.append(a)
+      };
+
+      const initLogin = () => {
+        localStorage.getItem("userValue") ?ini() : renderLogin();
+      }
+
+      initLogin();
+    </script>
+</body>
+</html>
